@@ -16,6 +16,7 @@ jobs:
 
       - name: Build
         run: |
+          ls -la
           ionic cordova build android --prod
 
   ios:
@@ -29,4 +30,5 @@ jobs:
 
       - name: Build
         run: |
+          ls -la
           ionic cordova build ios --prod
