@@ -27,17 +27,23 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-#   ios:
-#     runs-on: macos-latest
+  ios:
+    runs-on: macos-latest
 
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: Use coturiv/setup-ionic
-#         uses: coturiv/setup-ionic@v1
-#         with:
-#           cordova-version: 8
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use coturiv/setup-ionic
+        uses: coturiv/setup-ionic@v1
 
-#       - name: Build
-#         run: |
-#           ls -la
-#           ionic cordova build ios --prod
+      - name: Build
+        run: |
+          ls -la
+          ionic cordova build ios --prod
+      
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: platforms/ios
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
