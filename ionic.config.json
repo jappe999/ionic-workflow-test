@@ -1,0 +1,7 @@
+{
+  "name": "ionic-workflow-test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
