@@ -44,6 +44,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: platforms/ios
+          files: platforms/ios/build/emulator/MyApp.app
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
