@@ -37,8 +37,8 @@ jobs:
 
       - name: Build
         run: |
-          ls -la
           ionic cordova build ios --prod
+          ls -la platforms/ios/*
       
       - name: Release
         uses: softprops/action-gh-release@v1
