@@ -50,7 +50,7 @@ jobs:
           bundler-cache: true
 
       - name: Build
-        run: bundle exec fastlane ${{ matrix.platform }}
+        run: bundle exec fastlane ${{ matrix.platform }} build_debug
 
       - name: Release
         uses: softprops/action-gh-release@v1
